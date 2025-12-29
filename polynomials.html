@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polynomials Notes - Concept Oriented & Attractive</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f3f4f6;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(to right, #ff5722, #ff9800);
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
+      font-size: 1.8em;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+    section {
+      margin-bottom: 30px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      margin-bottom: 20px;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    h2 {
+      color: #ff5722;
+      margin-bottom: 10px;
+    }
+    h3 {
+      color: #ff9800;
+      margin-top: 15px;
+    }
+    p, ul, pre {
+      margin: 10px 0;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 12px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    .highlight {
+      color: #d32f2f;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #e0e0e0;
+      margin-top: 40px;
+      border-top: 1px solid #ccc;
+    }
+    a {
+      color: #ff5722;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  Polynomials Notes - Concept Oriented & Attractive (Hinglish)
+</header>
+
+<main>
+
+  <section class="card">
+    <h2>1. Polynomial kya hai?</h2>
+    <p>Polynomial ek <span class="highlight">mathematical expression</span> hai jisme <strong>variables</strong> aur <strong>numbers</strong> ka combination hota hai. Example:</p>
+    <pre>P(x) = a<sub>n</sub>x<sup>n</sup> + a<sub>n-1</sub>x<sup>n-1</sup> + ... + a<sub>1</sub>x + a<sub>0</sub></pre>
+    <ul>
+      <li><strong>x</strong> = variable</li>
+      <li><strong>a₀, a₁,..., aₙ</strong> = coefficients (numbers)</li>
+      <li><strong>n</strong> = degree (highest power of x)</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>2. Types of Polynomials</h2>
+    <ul>
+      <li><strong>Monomial</strong>: 1 term → 5x³</li>
+      <li><strong>Binomial</strong>: 2 terms → x² + 3x</li>
+      <li><strong>Trinomial</strong>: 3 terms → x³ + 2x² + 5</li>
+      <li><strong>Higher-degree</strong>: 3+ terms → x⁴ - x³ + x - 1</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>3. Degree of Polynomial</h2>
+    <p>Polynomial ka <span class="highlight">degree</span> = sabse bada power. Example:</p>
+    <pre>7x⁵ + 3x² - 4 → Degree = 5</pre>
+  </section>
+
+  <section class="card">
+    <h2>4. Standard Form</h2>
+    <p>Polynomial ko descending order me likho (highest power first):</p>
+    <pre>x³ + 2x² - 5x + 1 ✅</pre>
+    <pre>2 - 5x + x³ + 2x² ❌</pre>
+  </section>
+
+  <section class="card">
+    <h2>5. Operations on Polynomials</h2>
+    <h3>Addition & Subtraction</h3>
+    <pre>(3x² + 2x + 1) + (x² - 4x + 5) = 4x² - 2x + 6</pre>
+
+    <h3>Multiplication</h3>
+    <pre>(x+2)(x² + 3x + 1) = x³ + 5x² + 7x + 2</pre>
+
+    <h3>Division</h3>
+    <p>Long division ya synthetic division use hota hai. <br>
+    <strong>Remainder theorem:</strong> P(x) ÷ (x-a) → remainder = P(a)</p>
+  </section>
+
+  <section class="card">
+    <h2>6. Factorization</h2>
+    <ul>
+      <li>Common factor: 6x³ + 9x² = 3x²(2x+3)</li>
+      <li>Grouping: x³ + x² + x + 1 = (x²+1)(x+1)</li>
+      <li>Quadratic: x² + 5x + 6 = (x+2)(x+3)</li>
+      <li>Difference of squares: x² - 9 = (x-3)(x+3)</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>7. Zeros / Roots</h2>
+    <p>Zeros ya roots = x ki wo values jaha P(x) = 0</p>
+    <pre>x² - 5x + 6 = 0 → (x-2)(x-3) = 0 → zeros: 2, 3</pre>
+  </section>
+
+  <section class="card">
+    <h2>8. Important Theorems</h2>
+    <ul>
+      <li><strong>Remainder Theorem</strong>: P(x) ÷ (x-a) → remainder = P(a)</li>
+      <li><strong>Factor Theorem</strong>: Agar P(a)=0 → (x-a) factor hai</li>
+      <li><strong>Fundamental Theorem of Algebra</strong>: Degree n ka polynomial exactly n roots rakhta hai (complex numbers bhi)</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 BookNNotes | <a href="https://github.com">GitHub</a></p>
+</footer>
+
+</body>
+</html>
