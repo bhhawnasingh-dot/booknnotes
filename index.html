@@ -1,204 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <title>BookNotes Tools</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 30px;
+    }
+    .tools a {
+      display: inline-block;
+      width: 200px;
+      margin: 10px;
+      padding: 15px;
+      background: #ffffff;
+      text-decoration: none;
+      color: #333;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: 0.2s;
+    }
+    .tools a:hover {
+      background: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📚 BookNotes Tools</h1>
+
+  <div class="tools">
+    <a href="tools/pdf-merger/">PDF Merger</a>
+    <a href="tools/word-to-pdf/">Word to PDF</a>
+    <a href="tools/pdf-to-word/">PDF to Word</a>
+    <a href="tools/image-compressor/">Image Compressor</a>
+    <a href="tools/jpg-to-pdf/">JPG to PDF</a>
+  </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="google-site-verification" content="y6sbMjoUCMWzzF1jMAiR7SdoCOrDHxcWL2T8uYKvsiE">
-<meta name="google-site-verification" content="6FYlmq2VRoBHMO8gI2u32tWr6M8UaeWdPM380sTVKlo">
+<title>BookNNotes – Daily Useful Online Tools</title>
 
-<title>BookNNotes – Free Study Notes & Learning Platform</title>
-
-<meta name="description" content="BookNNotes is a free educational platform offering concept-based study notes for Class 8, 9 and 10 students with simple Hinglish explanations and smart learning tools.">
+<meta name="description" content="Free online tools – BMI Calculator, Age Calculator, Indian Income Tax Calculator, QR Code Generator, To-Do List & Currency Converter. Simple & useful daily tools.">
 
 <style>
 body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
   margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#f7f9fc;
-  color:#333;
-  line-height:1.8;
+  padding:20px;
 }
-header{
-  background:linear-gradient(135deg,#ff9800,#ff5722);
-  color:#fff;
-  padding:80px 20px;
+h1{
   text-align:center;
+  color:#4f46e5;
+  margin-bottom:30px;
 }
-header h1{
-  font-size:2.6rem;
-  margin-bottom:10px;
-}
-header p{
-  max-width:800px;
-  margin:auto;
-  font-size:1.1rem;
-}
-section{
-  max-width:1100px;
-  margin:auto;
-  padding:45px 20px;
-}
-h2{
-  text-align:center;
-  margin-bottom:22px;
-  color:#111;
+.container{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  justify-content:center;
 }
 .card{
   background:#fff;
-  padding:30px;
-  border-radius:14px;
-  box-shadow:0 10px 25px rgba(0,0,0,.05);
-  margin-bottom:30px;
+  width:340px;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
-.btn{
-  display:inline-block;
-  background:#ff9800;
-  color:#fff;
-  padding:12px 26px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:bold;
-}
-.btn:hover{background:#ff6f00;}
-footer{
-  background:#111827;
-  color:#fff;
+.card h2{
   text-align:center;
-  padding:25px;
-  font-size:14px;
+  color:#4f46e5;
 }
-footer a{color:#ff9800;text-decoration:none;}
-
-@media(max-width:768px){
-  header h1{font-size:2.1rem;}
-  header p{font-size:1rem;}
+input, select, button{
+  width:100%;
+  padding:10px;
+  margin:6px 0;
+  border-radius:6px;
+  border:1px solid #ccc;
+  font-size:15px;
+}
+button{
+  background:#4f46e5;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+}
+button:hover{
+  background:#6366f1;
+}
+.result{
+  font-weight:bold;
+  margin-top:8px;
+  text-align:center;
+}
+ul{
+  list-style:none;
+  padding:0;
+}
+li{
+  background:#e5e7eb;
+  padding:8px;
+  margin-bottom:6px;
+  border-radius:6px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+li.completed{
+  text-decoration:line-through;
+  color:gray;
+}
+.remove-btn{
+  background:#ef4444;
+  color:#fff;
+  border:none;
+  padding:4px 8px;
+  border-radius:6px;
+  cursor:pointer;
+}
+footer{
+  text-align:center;
+  margin-top:40px;
+  font-size:14px;
+  color:#666;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>BookNNotes</h1>
-  <p>
-    A free educational platform focused on concept clarity, not memorization.
-    Learn smarter with simple Hinglish explanations and student-friendly tools.
-  </p>
-</header>
+<h1>BookNNotes – Daily Useful Tools</h1>
 
-<section>
-  <h2>Welcome to BookNNotes</h2>
-  <div class="card">
-    <p>
-      BookNNotes is an independent educational initiative designed for Class 8, 9 and
-      10 students. Our mission is to make learning simple, clear and concept-oriented.
-    </p>
-    <p>
-      Every topic is explained in easy Hinglish so students can understand without fear
-      or confusion.
-    </p>
-  </div>
-</section>
+<div class="container">
 
-<section>
-  <h2>Why BookNNotes is Different</h2>
-  <div class="card">
-    <ul>
-      <li>Concept-first explanations</li>
-      <li>Simple real-life examples</li>
-      <li>Common mistakes clearly explained</li>
-      <li>Practice-focused learning approach</li>
-    </ul>
-  </div>
-</section>
+<!-- ================= BMI CALCULATOR ================= -->
+<div class="card">
+<h2>BMI Calculator</h2>
 
-<section>
-  <h2>📚 Free Study Notes</h2>
-  <div class="card">
-    <p>
-      Access free, well-structured study notes that help students build strong
-      fundamentals and exam confidence.
-    </p>
-    <a class="btn" href="https://blog.booknnotes.com" target="_blank">
-      Explore Notes
-    </a>
-  </div>
-</section>
+<select id="heightType">
+  <option value="cm">Height in CM</option>
+  <option value="ft">Height in Feet & Inch</option>
+</select>
 
-<section>
-  <h2>🛠 Learning & PDF Tools</h2>
-  <div class="card">
-    <p>
-      BookNNotes also provides helpful learning and PDF tools to support students
-      in daily academic work.
-    </p>
-    <a class="btn" href="https://pdf.booknnotes.com" target="_blank">
-      Open Tools
-    </a>
-  </div>
-</section>
+<input type="number" id="weight" placeholder="Weight (kg)">
 
-<section>
-  <h2>About BookNNotes</h2>
-  <div class="card">
-    <p>
-      BookNNotes believes that quality education should be free, transparent and
-      accessible to every student.
-    </p>
-  </div>
-</section>
+<div id="cmBox">
+  <input type="number" id="heightCm" placeholder="Height (cm)">
+</div>
 
-<!-- OHM TECH & WEB SERVICES -->
-<section>
-  <h2>Ohm Tech & Web Services (Powered by BookNNotes)</h2>
-  <div class="card">
-    <p>
-      Ohm Tech & Web Services is a professional web solutions initiative,
-      working in collaboration with the BookNNotes platform.
-    </p>
+<div id="ftBox" style="display:none;">
+  <input type="number" id="heightFt" placeholder="Feet">
+  <input type="number" id="heightIn" placeholder="Inches">
+</div>
 
-    <p>
-      This service is seamlessly integrated within BookNNotes and follows the
-      same principles of clarity, simplicity and long-term reliability.
-    </p>
+<button onclick="calculateBMI()">Calculate BMI</button>
+<div class="result" id="bmiResult"></div>
+</div>
 
-    <ul>
-      <li>Educational & content-based websites</li>
-      <li>Static websites and landing pages</li>
-      <li>GitHub Pages setup & hosting support</li>
-      <li>SEO-friendly website structure</li>
-      <li>Responsive and performance-optimized design</li>
-    </ul>
+<!-- ================= AGE CALCULATOR ================= -->
+<div class="card">
+<h2>Age Calculator</h2>
+<input type="date" id="dob">
+<button onclick="calculateAge()">Calculate Age</button>
+<div class="result" id="ageResult"></div>
+</div>
 
-    <p>
-      We collaborate with individuals, educators and small teams looking for
-      clean, honest and effective web solutions.
-    </p>
+<!-- ================= TAX CALCULATOR ================= -->
+<div class="card">
+<h2>Indian Income Tax</h2>
+<input type="number" id="income" placeholder="Yearly Income (₹)">
+<button onclick="calculateTax()">Calculate Tax</button>
+<div class="result" id="taxResult"></div>
+</div>
 
-    <a class="btn" href="https://wa.me/919105371051" target="_blank">
-      Connect with Ohm Tech & Web Services
-    </a>
-  </div>
-</section>
+<!-- ================= QR CODE ================= -->
+<div class="card">
+<h2>QR Code Generator</h2>
+<input type="text" id="qrText" placeholder="Enter text or URL">
+<button onclick="generateQR()">Generate QR</button>
+<div id="qrcode" style="text-align:center;margin-top:10px;"></div>
+</div>
 
-<section>
-  <h2>Contact & Suggestions</h2>
-  <div class="card">
-    <p>
-      For feedback, corrections or collaboration, feel free to connect with us.
-    </p>
-    <a class="btn" href="https://wa.me/919105371051" target="_blank">
-      Contact via WhatsApp
-    </a>
-  </div>
-</section>
+<!-- ================= TODO LIST ================= -->
+<div class="card">
+<h2>To-Do List</h2>
+<input type="text" id="todoInput" placeholder="Add a task">
+<button onclick="addTask()">Add Task</button>
+<ul id="todoList"></ul>
+</div>
+
+<!-- ================= CURRENCY ================= -->
+<div class="card">
+<h2>Currency Converter</h2>
+<input type="number" id="amount" placeholder="Amount">
+
+<select id="fromCurrency">
+  <option value="INR">INR</option>
+  <option value="USD">USD</option>
+  <option value="EUR">EUR</option>
+  <option value="GBP">GBP</option>
+</select>
+
+<select id="toCurrency">
+  <option value="USD">USD</option>
+  <option value="INR">INR</option>
+  <option value="EUR">EUR</option>
+  <option value="GBP">GBP</option>
+</select>
+
+<button onclick="convertCurrency()">Convert</button>
+<div class="result" id="currencyResult"></div>
+</div>
+
+</div>
 
 <footer>
-  © 2026 BookNNotes |
-  <a href="/privacy.html">Privacy Policy</a> |
-  <a href="/terms.html">Terms & Conditions</a>
+© 2025 BookNNotes.com | Free Online Tools
 </footer>
+
+<!-- QR Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+// BMI toggle
+document.getElementById("heightType").addEventListener("change", function(){
+  cmBox.style.display = this.value === "cm" ? "block" : "none";
+  ftBox.style.display = this.value === "ft" ? "block" : "none";
+});
+
+// BMI
+function calculateBMI(){
+  let w = parseFloat(weight.value);
+  let h;
+  if(heightType.value === "cm"){
+    h = heightCm.value / 100;
+  }else{
+    h = ((heightFt.value*12)+(+heightIn.value))*0.0254;
+  }
+  if(w>0 && h>0){
+    bmiResult.innerText = "BMI: " + (w/(h*h)).toFixed(2);
+  }else bmiResult.innerText="Invalid input";
+}
+
+// Age
+function calculateAge(){
+  let d=new Date(dob.value), t=new Date();
+  let y=t.getFullYear()-d.getFullYear();
+  let m=t.getMonth()-d.getMonth();
+  let da=t.getDate()-d.getDate();
+  if(da<0){m--; da+=new Date(t.getFullYear(),t.getMonth(),0).getDate();}
+  if(m<0){y--; m+=12;}
+  ageResult.innerText=`${y} Years ${m} Months ${da} Days`;
+}
+
+// Tax
+function calculateTax(){
+  let i=+income.value, tax=0;
+  if(i<=300000)tax=0;
+  else if(i<=600000)tax=(i-300000)*0.05;
+  else if(i<=900000)tax=15000+(i-600000)*0.1;
+  else if(i<=1200000)tax=45000+(i-900000)*0.15;
+  else if(i<=1500000)tax=90000+(i-1200000)*0.2;
+  else tax=150000+(i-1500000)*0.3;
+  taxResult.innerText="Tax: ₹"+tax.toFixed(2);
+}
+
+// QR
+function generateQR(){
+  qrcode.innerHTML="";
+  if(qrText.value==="")return;
+  new QRCode(qrcode,{text:qrText.value,width:180,height:180});
+}
+
+// Todo
+function addTask(){
+  if(todoInput.value==="")return;
+  let li=document.createElement("li");
+  li.textContent=todoInput.value;
+  li.onclick=()=>li.classList.toggle("completed");
+  let b=document.createElement("button");
+  b.textContent="X";
+  b.className="remove-btn";
+  b.onclick=e=>{e.stopPropagation();li.remove();}
+  li.appendChild(b);
+  todoList.appendChild(li);
+  todoInput.value="";
+}
+
+// Currency
+const rates={INR:1,USD:82,EUR:90,GBP:102};
+function convertCurrency(){
+  let amt=+amount.value;
+  let res=(amt*rates[fromCurrency.value]/rates[toCurrency.value]).toFixed(2);
+  currencyResult.innerText=`${amt} ${fromCurrency.value} = ${res} ${toCurrency.value}`;
+}
+</script>
 
 </body>
 </html>
