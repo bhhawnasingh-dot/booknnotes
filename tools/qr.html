@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>QR Code Generator - BookNNotes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{font-family:Arial;text-align:center;padding:20px;}
+input,button{padding:10px;margin:5px;}
+#qrcode{margin-top:15px;}
+</style>
+</head>
+<body>
+
+<h1>QR Code Generator</h1>
+<input type="text" id="qrText" placeholder="Enter text or URL">
+<br>
+<button onclick="generateQR()">Generate QR</button>
+
+<div id="qrcode"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+function generateQR(){
+  document.getElementById("qrcode").innerHTML="";
+  if(qrText.value==="") return;
+  new QRCode("qrcode", {
+    text: qrText.value,
+    width: 180,
+    height: 180
+  });
+}
+</script>
+
+</body>
+</html>
