@@ -2,331 +2,107 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>BookNotes Tools</title>
+  <title>BookNNotes – Free Online Tools</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free online tools like BMI Calculator, Age Calculator, EMI Calculator, PDF Tools, QR Code Generator, Currency Converter and more. No registration required.">
+
   <style>
-    body {
+    body{
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 20px;
-      text-align: center;
+      background:#f4f6f8;
+      margin:0;
+      padding:20px;
     }
-    h1 {
-      margin-bottom: 30px;
+    h1{
+      text-align:center;
+      color:#4f46e5;
+      margin-bottom:10px;
     }
-    .tools a {
-      display: inline-block;
-      width: 200px;
-      margin: 10px;
-      padding: 15px;
-      background: #ffffff;
-      text-decoration: none;
-      color: #333;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: 0.2s;
+    p{
+      text-align:center;
+      color:#555;
+      margin-bottom:30px;
     }
-    .tools a:hover {
-      background: #e0e0e0;
+    .tools{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+      max-width:1000px;
+      margin:auto;
+    }
+    .tool{
+      background:#fff;
+      padding:18px;
+      border-radius:12px;
+      text-align:center;
+      text-decoration:none;
+      color:#333;
+      box-shadow:0 8px 20px rgba(0,0,0,0.08);
+      transition:0.2s;
+    }
+    .tool:hover{
+      transform:translateY(-4px);
+    }
+    .about{
+      max-width:900px;
+      margin:50px auto 20px;
+      background:#fff;
+      padding:25px;
+      border-radius:12px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.06);
+      text-align:center;
+      color:#444;
+    }
+    footer{
+      text-align:center;
+      margin-top:40px;
+      font-size:14px;
+      color:#666;
+    }
+    footer a{
+      color:#4f46e5;
+      text-decoration:none;
+      margin:0 6px;
     }
   </style>
 </head>
-<body>
-
-  <h1>📚 BookNotes Tools</h1>
-
-  <div class="tools">
-    <a href="tools/pdf-merger/">PDF Merger</a>
-    <a href="tools/word-to-pdf/">Word to PDF</a>
-    <a href="tools/pdf-to-word/">PDF to Word</a>
-    <a href="tools/image-compressor/">Image Compressor</a>
-    <a href="tools/jpg-to-pdf/">JPG to PDF</a>
-  </div>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>BookNNotes – Daily Useful Online Tools</title>
-
-<meta name="description" content="Free online tools – BMI Calculator, Age Calculator, Indian Income Tax Calculator, QR Code Generator, To-Do List & Currency Converter. Simple & useful daily tools.">
-
-<style>
-body{
-  font-family: Arial, sans-serif;
-  background:#f4f6f8;
-  margin:0;
-  padding:20px;
-}
-h1{
-  text-align:center;
-  color:#4f46e5;
-  margin-bottom:30px;
-}
-.container{
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
-  justify-content:center;
-}
-.card{
-  background:#fff;
-  width:340px;
-  padding:20px;
-  border-radius:12px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
-.card h2{
-  text-align:center;
-  color:#4f46e5;
-}
-input, select, button{
-  width:100%;
-  padding:10px;
-  margin:6px 0;
-  border-radius:6px;
-  border:1px solid #ccc;
-  font-size:15px;
-}
-button{
-  background:#4f46e5;
-  color:#fff;
-  border:none;
-  cursor:pointer;
-}
-button:hover{
-  background:#6366f1;
-}
-.result{
-  font-weight:bold;
-  margin-top:8px;
-  text-align:center;
-}
-ul{
-  list-style:none;
-  padding:0;
-}
-li{
-  background:#e5e7eb;
-  padding:8px;
-  margin-bottom:6px;
-  border-radius:6px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-li.completed{
-  text-decoration:line-through;
-  color:gray;
-}
-.remove-btn{
-  background:#ef4444;
-  color:#fff;
-  border:none;
-  padding:4px 8px;
-  border-radius:6px;
-  cursor:pointer;
-}
-footer{
-  text-align:center;
-  margin-top:40px;
-  font-size:14px;
-  color:#666;
-}
-</style>
-</head>
 
 <body>
 
-<h1>BookNNotes – Daily Useful Tools</h1>
+<h1>📚 BookNNotes Tools</h1>
+<p>Completely free online tools • No registration required</p>
 
-<div class="container">
-
-<!-- ================= BMI CALCULATOR ================= -->
-<div class="card">
-<h2>BMI Calculator</h2>
-
-<select id="heightType">
-  <option value="cm">Height in CM</option>
-  <option value="ft">Height in Feet & Inch</option>
-</select>
-
-<input type="number" id="weight" placeholder="Weight (kg)">
-
-<div id="cmBox">
-  <input type="number" id="heightCm" placeholder="Height (cm)">
+<div class="tools">
+  <a class="tool" href="tools/bmi.html">BMI Calculator</a>
+  <a class="tool" href="tools/age.html">Age Calculator</a>
+  <a class="tool" href="tools/loan-emi.html">Loan EMI Calculator</a>
+  <a class="tool" href="tools/simple-interest.html">Simple Interest Calculator</a>
+  <a class="tool" href="tools/currency.html">Currency Converter</a>
+  <a class="tool" href="tools/qr.html">QR Code Generator</a>
+  <a class="tool" href="tools/image-resizer.html">Image Resizer</a>
+  <a class="tool" href="tools/pdf-merge.html">PDF Merge</a>
+  <a class="tool" href="tools/pdf-split.html">PDF Split</a>
+  <a class="tool" href="tools/pdf-to-word.html">PDF to Word</a>
 </div>
 
-<div id="ftBox" style="display:none;">
-  <input type="number" id="heightFt" placeholder="Feet">
-  <input type="number" id="heightIn" placeholder="Inches">
-</div>
-
-<button onclick="calculateBMI()">Calculate BMI</button>
-<div class="result" id="bmiResult"></div>
-</div>
-
-<!-- ================= AGE CALCULATOR ================= -->
-<div class="card">
-<h2>Age Calculator</h2>
-<input type="date" id="dob">
-<button onclick="calculateAge()">Calculate Age</button>
-<div class="result" id="ageResult"></div>
-</div>
-
-<!-- ================= TAX CALCULATOR ================= -->
-<div class="card">
-<h2>Indian Income Tax</h2>
-<input type="number" id="income" placeholder="Yearly Income (₹)">
-<button onclick="calculateTax()">Calculate Tax</button>
-<div class="result" id="taxResult"></div>
-</div>
-
-<!-- ================= QR CODE ================= -->
-<div class="card">
-<h2>QR Code Generator</h2>
-<input type="text" id="qrText" placeholder="Enter text or URL">
-<button onclick="generateQR()">Generate QR</button>
-<div id="qrcode" style="text-align:center;margin-top:10px;"></div>
-</div>
-
-<!-- ================= TODO LIST ================= -->
-<div class="card">
-<h2>To-Do List</h2>
-<input type="text" id="todoInput" placeholder="Add a task">
-<button onclick="addTask()">Add Task</button>
-<ul id="todoList"></ul>
-</div>
-
-<!-- ================= CURRENCY ================= -->
-<div class="card">
-<h2>Currency Converter</h2>
-<input type="number" id="amount" placeholder="Amount">
-
-<select id="fromCurrency">
-  <option value="INR">INR</option>
-  <option value="USD">USD</option>
-  <option value="EUR">EUR</option>
-  <option value="GBP">GBP</option>
-</select>
-
-<select id="toCurrency">
-  <option value="USD">USD</option>
-  <option value="INR">INR</option>
-  <option value="EUR">EUR</option>
-  <option value="GBP">GBP</option>
-</select>
-
-<button onclick="convertCurrency()">Convert</button>
-<div class="result" id="currencyResult"></div>
-</div>
-
-</div>
-
-<footer>
-© 2025 BookNNotes.com | Free Online Tools
-</footer>
-
-<!-- QR Library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
-<script>
-// BMI toggle
-document.getElementById("heightType").addEventListener("change", function(){
-  cmBox.style.display = this.value === "cm" ? "block" : "none";
-  ftBox.style.display = this.value === "ft" ? "block" : "none";
-});
-
-// BMI
-function calculateBMI(){
-  let w = parseFloat(weight.value);
-  let h;
-  if(heightType.value === "cm"){
-    h = heightCm.value / 100;
-  }else{
-    h = ((heightFt.value*12)+(+heightIn.value))*0.0254;
-  }
-  if(w>0 && h>0){
-    bmiResult.innerText = "BMI: " + (w/(h*h)).toFixed(2);
-  }else bmiResult.innerText="Invalid input";
-}
-
-// Age
-function calculateAge(){
-  let d=new Date(dob.value), t=new Date();
-  let y=t.getFullYear()-d.getFullYear();
-  let m=t.getMonth()-d.getMonth();
-  let da=t.getDate()-d.getDate();
-  if(da<0){m--; da+=new Date(t.getFullYear(),t.getMonth(),0).getDate();}
-  if(m<0){y--; m+=12;}
-  ageResult.innerText=`${y} Years ${m} Months ${da} Days`;
-}
-
-// Tax
-function calculateTax(){
-  let i=+income.value, tax=0;
-  if(i<=300000)tax=0;
-  else if(i<=600000)tax=(i-300000)*0.05;
-  else if(i<=900000)tax=15000+(i-600000)*0.1;
-  else if(i<=1200000)tax=45000+(i-900000)*0.15;
-  else if(i<=1500000)tax=90000+(i-1200000)*0.2;
-  else tax=150000+(i-1500000)*0.3;
-  taxResult.innerText="Tax: ₹"+tax.toFixed(2);
-}
-
-// QR
-function generateQR(){
-  qrcode.innerHTML="";
-  if(qrText.value==="")return;
-  new QRCode(qrcode,{text:qrText.value,width:180,height:180});
-}
-
-// Todo
-function addTask(){
-  if(todoInput.value==="")return;
-  let li=document.createElement("li");
-  li.textContent=todoInput.value;
-  li.onclick=()=>li.classList.toggle("completed");
-  let b=document.createElement("button");
-  b.textContent="X";
-  b.className="remove-btn";
-  b.onclick=e=>{e.stopPropagation();li.remove();}
-  li.appendChild(b);
-  todoList.appendChild(li);
-  todoInput.value="";
-}
-
-// Currency
-const rates={INR:1,USD:82,EUR:90,GBP:102};
-function convertCurrency(){
-  let amt=+amount.value;
-  let res=(amt*rates[fromCurrency.value]/rates[toCurrency.value]).toFixed(2);
-  currencyResult.innerText=`${amt} ${fromCurrency.value} = ${res} ${toCurrency.value}`;
-}
-</script>
-
-</body>
-</html>
-<section id="about">
+<!-- ABOUT SECTION -->
+<div class="about">
   <h2>About BookNNotes</h2>
   <p>
     BookNNotes is an <strong>evolving platform</strong> that has grown from a free educational website offering
     study notes and learning resources into a <strong>completely free online tools platform</strong>.
-    We provide practical, everyday tools — from BMI and Age Calculators to QR Code Generators,
-    Income Tax Calculators, Currency Converters, To-Do Lists, and more.
     <strong>All tools are completely free to use and require no registration.</strong>
     Our mission is to make useful online tools easily accessible to everyone,
     helping you save time and simplify your daily tasks.
   </p>
-</section>
-<footer style="text-align:center; margin-top:40px; font-size:14px; color:#666;">
-  © 2025 BookNNotes.com | Free Online Tools <br>
-  <a href="privacy.html" style="color:#4f46e5; text-decoration:none; margin:0 5px;">Privacy Policy</a> |
-  <a href="terms.html" style="color:#4f46e5; text-decoration:none; margin:0 5px;">Terms & Conditions</a> |
-  <a href="contact.html" style="color:#4f46e5; text-decoration:none; margin:0 5px;">Contact Us</a>
+</div>
+
+<footer>
+  © 2025 BookNNotes.com |
+  <a href="privacy.html">Privacy</a> |
+  <a href="terms.html">Terms</a> |
+  <a href="contact.html">Contact</a>
 </footer>
+
+</body>
+</html>
