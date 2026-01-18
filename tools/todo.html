@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>To-Do List - BookNNotes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{font-family:Arial;text-align:center;padding:20px;}
+input,button{padding:10px;margin:5px;}
+ul{list-style:none;padding:0;max-width:300px;margin:auto;}
+li{background:#e5e7eb;padding:8px;margin:6px 0;border-radius:6px;
+display:flex;justify-content:space-between;align-items:center;}
+.completed{text-decoration:line-through;color:gray;}
+button.del{background:red;color:#fff;border:none;border-radius:4px;}
+</style>
+</head>
+<body>
+
+<h1>To-Do List</h1>
+
+<input type="text" id="taskInput" placeholder="Add a task">
+<button onclick="addTask()">Add</button>
+
+<ul id="taskList"></ul>
+
+<script>
+function addTask(){
+  if(taskInput.value==="") return;
+  let li=document.createElement("li");
+  li.textContent=taskInput.value;
+  li.onclick=()=>li.classList.toggle("completed");
+
+  let del=document.createElement("button");
+  del.textContent="X";
+  del.className="del";
+  del.onclick=e=>{e.stopPropagation();li.remove();};
+
+  li.appendChild(del);
+  taskList.appendChild(li);
+  taskInput.value="";
+}
+</script>
+
+</body>
+</html>
