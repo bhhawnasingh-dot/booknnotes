@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><title>Image Resizer</title></head>
+<body>
+<h2>Image Resizer</h2>
+
+<input type="file" id="img"><br>
+<input type="number" id="w" placeholder="Width">
+<input type="number" id="h" placeholder="Height"><br>
+<button onclick="resize()">Resize</button>
+<br><br>
+<canvas id="canvas"></canvas>
+
+<script>
+function resize(){
+let file=img.files[0];
+let image=new Image();
+image.onload=()=>{
+canvas.width=w.value;
+canvas.height=h.value;
+canvas.getContext("2d").drawImage(image,0,0,w.value,h.value);
+};
+image.src=URL.createObjectURL(file);
+}
+</script>
+</body>
+</html>
