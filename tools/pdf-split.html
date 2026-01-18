@@ -1,12 +1,180 @@
 <!DOCTYPE html>
-<html>
-<head><title>PDF Split</title></head>
-<body>
-<h2>Split PDF</h2>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PDF Split Tool – BookNNotes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Split PDF pages online for free. No registration required.">
 
-<input type="file" accept="application/pdf">
-<input type="number" placeholder="Page number">
-<p>Client-side split needs advanced JS library</p>
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#667eea,#764ba2);
+  min-height:100vh;
+  padding:20px;
+}
+.container{
+  max-width:500px;
+  margin:auto;
+  background:#fff;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+h1{
+  text-align:center;
+  color:#4f46e5;
+  margin-bottom:10px;
+}
+p{
+  text-align:center;
+  color:#555;
+  font-size:14px;
+}
+input,button{
+  width:100%;
+  padding:12px;
+  margin-top:12px;
+  border-radius:8px;
+  font-size:15px;
+}
+input{
+  border:1px solid #ccc;
+}
+button{
+  border:none;
+  background:#4f46e5;
+  color:#fff;
+  font-weight:bold;
+  cursor:pointer;
+}
+button:hover{
+  background:#3730a3;
+}
+#downloadBtn{
+  background:#16a34a;
+  display:none;
+}
+#downloadBtn:hover{
+  background:#15803d;
+}
+#result{
+  margin-top:15px;
+  text-align:center;
+  font-weight:bold;
+}
+footer{
+  text-align:center;
+  margin-top:25px;
+  font-size:13px;
+  color:#666;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>📄 PDF Split Tool</h1>
+  <p>Split selected pages from a PDF – 100% free</p>
+
+  <input type="file" id="pdfFile" accept="application/pdf">
+
+  <input type="text" id="pages" placeholder="Pages (example: 1-3,5,8)">
+
+  <button id="splitBtn">Split PDF</button>
+
+  <button id="downloadBtn">⬇️ Download Split PDF</button>
+
+  <div id="result"></div>
+</div>
+
+<footer>
+  © 2025 BookNNotes.com
+</footer>
+
+<script>
+const fileInput = document.getElementById("pdfFile");
+const pagesInput = document.getElementById("pages");
+const splitBtn = document.getElementById("splitBtn");
+const downloadBtn = document.getElementById("downloadBtn");
+const result = document.getElementById("result");
+
+let splitPdfBytes = null;
+
+splitBtn.addEventListener("click", splitPDF);
+downloadBtn.addEventListener("click", downloadPDF);
+
+async function splitPDF(){
+  if(!fileInput.files.length){
+    alert("Please select a PDF file");
+    return;
+  }
+  if(!pagesInput.value.trim()){
+    alert("Enter page numbers");
+    return;
+  }
+
+  splitBtn.innerText = "Processing...";
+  splitBtn.disabled = true;
+
+  const file = fileInput.files[0];
+  const arrayBuffer = await file.arrayBuffer();
+  const pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer);
+  const newPdf = await PDFLib.PDFDocument.create();
+
+  const totalPages = pdfDoc.getPageCount();
+  const pages = parsePages(pagesInput.value, totalPages);
+
+  if(pages.length === 0){
+    alert("Invalid page numbers");
+    splitBtn.innerText = "Split PDF";
+    splitBtn.disabled = false;
+    return;
+  }
+
+  for(const p of pages){
+    const [page] = await newPdf.copyPages(pdfDoc, [p - 1]);
+    newPdf.addPage(page);
+  }
+
+  splitPdfBytes = await newPdf.save();
+
+  result.innerText = "✅ PDF split successfully!";
+  downloadBtn.style.display = "block";
+
+  splitBtn.innerText = "Split PDF";
+  splitBtn.disabled = false;
+}
+
+function downloadPDF(){
+  const blob = new Blob([splitPdfBytes], {type:"application/pdf"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "split.pdf";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function parsePages(input, max){
+  let pages = [];
+  input.split(",").forEach(part=>{
+    if(part.includes("-")){
+      let [start,end] = part.split("-").map(Number);
+      for(let i=start;i<=end;i++){
+        if(i>=1 && i<=max) pages.push(i);
+      }
+    }else{
+      let p = Number(part);
+      if(p>=1 && p<=max) pages.push(p);
+    }
+  });
+  return [...new Set(pages)];
+}
+</script>
 
 </body>
 </html>
