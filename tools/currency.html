@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Currency Converter - BookNNotes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{font-family:Arial;text-align:center;padding:20px;}
+input,select,button{padding:10px;margin:5px;}
+.result{font-weight:bold;margin-top:10px;}
+</style>
+</head>
+<body>
+
+<h1>Currency Converter</h1>
+
+<input type="number" id="amount" placeholder="Amount">
+
+<br>
+
+<select id="from">
+  <option value="INR">INR</option>
+  <option value="USD">USD</option>
+  <option value="EUR">EUR</option>
+  <option value="GBP">GBP</option>
+</select>
+
+<select id="to">
+  <option value="USD">USD</option>
+  <option value="INR">INR</option>
+  <option value="EUR">EUR</option>
+  <option value="GBP">GBP</option>
+</select>
+
+<br>
+<button onclick="convert()">Convert</button>
+
+<div class="result" id="result"></div>
+
+<script>
+const rates={INR:1,USD:82,EUR:90,GBP:102};
+
+function convert(){
+  let amt=+amount.value;
+  let res=(amt*rates[from.value]/rates[to.value]).toFixed(2);
+  result.innerText=`${amt} ${from.value} = ${res} ${to.value}`;
+}
+</script>
+
+</body>
+</html>
