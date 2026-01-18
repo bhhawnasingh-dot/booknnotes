@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BMI Calculator - BookNNotes Tools</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial; padding:20px; text-align:center; }
+    input, select, button { padding:10px; margin:5px; }
+    .result { font-weight:bold; margin-top:10px; }
+  </style>
+</head>
+<body>
+  <h1>BMI Calculator</h1>
+  <select id="heightType">
+    <option value="cm">Height in CM</option>
+    <option value="ft">Height in Feet & Inch</option>
+  </select>
+  <input type="number" id="weight" placeholder="Weight (kg)">
+  <div id="cmBox"><input type="number" id="heightCm" placeholder="Height (cm)"></div>
+  <div id="ftBox" style="display:none;">
+    <input type="number" id="heightFt" placeholder="Feet">
+    <input type="number" id="heightIn" placeholder="Inches">
+  </div>
+  <button onclick="calculateBMI()">Calculate BMI</button>
+  <div class="result" id="bmiResult"></div>
+
+  <script>
+    const cmBox = document.getElementById("cmBox");
+    const ftBox = document.getElementById("ftBox");
+    const heightType = document.getElementById("heightType");
+    const weight = document.getElementById("weight");
+    const heightCm = document.getElementById("heightCm");
+    const heightFt = document.getElementById("heightFt");
+    const heightIn = document.getElementById("heightIn");
+    const bmiResult = document.getElementById("bmiResult");
+
+    heightType.addEventListener("change", function(){
+      cmBox.style.display = this.value==="cm"?"block":"none";
+      ftBox.style.display = this.value==="ft"?"block":"none";
+    });
+
+    function calculateBMI(){
+      let w = parseFloat(weight.value);
+      let h = heightType.value==="cm"? heightCm.value/100 : ((heightFt.value*12)+(+heightIn.value))*0.0254;
+      if(w>0 && h>0) bmiResult.innerText = "BMI: "+(w/(h*h)).toFixed(2);
+      else bmiResult.innerText="Invalid input";
+    }
+  </script>
+</body>
+</html>
