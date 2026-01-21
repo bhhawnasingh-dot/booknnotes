@@ -1,27 +1,168 @@
 <!DOCTYPE html>
-<html>
-<head><title>Image Resizer</title></head>
-<body>
-<h2>Image Resizer</h2>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Image Resizer – Free Online Tool | BookNNotes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Resize images by dimensions or file size (KB). Free image resizer with instant download. No registration required.">
 
-<input type="file" id="img"><br>
-<input type="number" id="w" placeholder="Width">
-<input type="number" id="h" placeholder="Height"><br>
-<button onclick="resize()">Resize</button>
-<br><br>
-<canvas id="canvas"></canvas>
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+  padding:20px;
+}
+.container{
+  max-width:500px;
+  margin:auto;
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+h2{text-align:center;color:#4f46e5;}
+input,select,button{
+  width:100%;
+  padding:12px;
+  margin-top:12px;
+  font-size:15px;
+}
+button{
+  background:#4f46e5;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+button:hover{background:#4338ca;}
+canvas{display:none;}
+img{
+  max-width:100%;
+  margin-top:15px;
+  border-radius:8px;
+}
+label{
+  font-size:14px;
+  color:#444;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Image Resizer</h2>
+
+  <input type="file" id="upload" accept="image/*">
+
+  <label>Resize Mode</label>
+  <select id="mode">
+    <option value="dimension">Resize by Width & Height</option>
+    <option value="size">Resize by File Size (KB)</option>
+  </select>
+
+  <!-- Dimension -->
+  <div id="dimensionBox">
+    <label>Width (px)</label>
+    <input type="number" id="width">
+
+    <label>Height (px)</label>
+    <input type="number" id="height">
+  </div>
+
+  <!-- Size -->
+  <div id="sizeBox" style="display:none;">
+    <label>Select Size</label>
+    <select id="sizeKB">
+      <option value="1">1 KB</option>
+      <option value="2">2 KB</option>
+      <option value="5">5 KB</option>
+      <option value="10">10 KB</option>
+      <option value="20">20 KB</option>
+      <option value="custom">Custom</option>
+    </select>
+
+    <input type="number" id="customKB" placeholder="Enter KB" style="display:none;">
+  </div>
+
+  <button onclick="resizeImage()">Resize & Download</button>
+
+  <img id="preview">
+  <canvas id="canvas"></canvas>
+</div>
 
 <script>
-function resize(){
-let file=img.files[0];
-let image=new Image();
-image.onload=()=>{
-canvas.width=w.value;
-canvas.height=h.value;
-canvas.getContext("2d").drawImage(image,0,0,w.value,h.value);
+let img = new Image();
+const upload = document.getElementById("upload");
+
+upload.addEventListener("change", e=>{
+  const file = e.target.files[0];
+  if(!file) return;
+
+  const reader = new FileReader();
+  reader.onload = ()=> img.src = reader.result;
+  reader.readAsDataURL(file);
+});
+
+img.onload = ()=>{
+  width.value = img.width;
+  height.value = img.height;
 };
-image.src=URL.createObjectURL(file);
+
+mode.onchange = ()=>{
+  dimensionBox.style.display = mode.value==="dimension" ? "block":"none";
+  sizeBox.style.display = mode.value==="size" ? "block":"none";
+};
+
+sizeKB.onchange = ()=>{
+  customKB.style.display = sizeKB.value==="custom" ? "block":"none";
+};
+
+function resizeImage(){
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+
+  if(mode.value==="dimension"){
+    canvas.width = width.value;
+    canvas.height = height.value;
+    ctx.drawImage(img,0,0,canvas.width,canvas.height);
+    download(canvas,0.9);
+  }else{
+    canvas.width = img.width;
+    canvas.height = img.height;
+    ctx.drawImage(img,0,0);
+
+    let kb = sizeKB.value==="custom" ? customKB.value : sizeKB.value;
+    compressToKB(canvas,kb);
+  }
+}
+
+function compressToKB(canvas,targetKB){
+  let quality = 0.9;
+  let dataURL;
+
+  do{
+    dataURL = canvas.toDataURL("image/jpeg",quality);
+    quality -= 0.05;
+  }while((dataURL.length/1024) > targetKB && quality > 0.05);
+
+  preview.src = dataURL;
+  downloadLink(dataURL);
+}
+
+function download(canvas,quality){
+  const dataURL = canvas.toDataURL("image/png",quality);
+  preview.src = dataURL;
+  downloadLink(dataURL);
+}
+
+function downloadLink(dataURL){
+  const a = document.createElement("a");
+  a.href = dataURL;
+  a.download = "booknnotes-image.png";
+  a.click();
 }
 </script>
+
 </body>
 </html>
