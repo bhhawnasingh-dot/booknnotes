@@ -1,11 +1,77 @@
 <!DOCTYPE html>
-<html>
-<head><title>Word to PDF</title></head>
-<body>
-<h2>Word to PDF</h2>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Word to PDF – BookNNotes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<input type="file" accept=".doc,.docx">
-<p>Conversion requires backend / WebAssembly</p>
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f8;
+  padding:20px;
+}
+.container{
+  max-width:500px;
+  margin:auto;
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+h2{text-align:center;color:#4f46e5;}
+textarea{
+  width:100%;
+  height:180px;
+  padding:10px;
+  margin-top:10px;
+}
+button{
+  margin-top:15px;
+  width:100%;
+  padding:12px;
+  background:#4f46e5;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  font-size:16px;
+  cursor:pointer;
+  pointer-events:auto;
+}
+button:hover{background:#4338ca;}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Word / Text to PDF</h2>
+
+  <p>Paste your text below and convert to PDF</p>
+
+  <textarea id="text" placeholder="Paste your Word content here..."></textarea>
+
+  <button type="button" onclick="convertPDF()">Convert to PDF</button>
+</div>
+
+<!-- jsPDF CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+function convertPDF(){
+  const text = document.getElementById("text").value;
+  if(text.trim()===""){
+    alert("Please enter text");
+    return;
+  }
+
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF();
+
+  pdf.text(text, 10, 10, { maxWidth: 180 });
+  pdf.save("booknnotes.pdf");
+}
+</script>
 
 </body>
 </html>
