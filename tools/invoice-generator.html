@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Invoice Generator | BookNNotes</title>
+  <meta name="description" content="Create professional invoices with item-wise quantity, price, subtotal and download option. Free online invoice generator.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      background: #fff;
+      padding: 20px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    button {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 8px;
+      text-align: center;
+    }
+    .invoice {
+      background: #eef;
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 5px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <h1>Invoice Generator</h1>
+  <p>Fill company, client and items. Enter quantity and price for each item and generate invoice. Then download if needed.</p>
+
+  <input type="text" id="company" placeholder="Company Name">
+  <input type="text" id="client" placeholder="Client Name">
+
+  <h3>Invoice Items</h3>
+  <table id="itemTable">
+    <tr>
+      <th>Item</th>
+      <th>Quantity</th>
+      <th>Price (₹)</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+      <td><input type="text" class="item"></td>
+      <td><input type="number" class="qty" min="1"></td>
+      <td><input type="number" class="price" min="0"></td>
+      <td><button onclick="removeRow(this)">Remove</button></td>
+    </tr>
+  </table>
+  <button onclick="addRow()">Add Item</button>
+  <button onclick="generateInvoice()">Generate Invoice</button>
+  <button onclick="downloadInvoice()">Download Invoice</button>
+
+  <div class="invoice" id="invoice"></div>
+
+  <h2>How it works</h2>
+  <p>Enter company and client name, add items with quantity and price, click Generate, then Download to save invoice as TXT file.</p>
+
+  <h2>Who should use this tool?</h2>
+  <p>Freelancers, small business owners, students, anyone needing simple invoices quickly.</p>
+</div>
+
+<script>
+function addRow() {
+  var table = document.getElementById("itemTable");
+  var row = table.insertRow();
+  row.innerHTML = `
+    <td><input type="text" class="item"></td>
+    <td><input type="number" class="qty" min="1"></td>
+    <td><input type="number" class="price" min="0"></td>
+    <td><button onclick="removeRow(this)">Remove</button></td>
+  `;
+}
+
+function removeRow(btn) {
+  var row = btn.parentNode.parentNode;
+  row.parentNode.removeChild(row);
+}
+
+function generateInvoice() {
+  var company = document.getElementById("company").value;
+  var client = document.getElementById("client").value;
+  var table = document.getElementById("itemTable");
+  var items = [];
+  var totalAmount = 0;
+
+  if(company === "" || client === "") {
+    document.getElementById("invoice").innerHTML = "Please enter company and client name.";
+    return;
+  }
+
+  for(var i=1; i < table.rows.length; i++) {
+    var item = table.rows[i].querySelector(".item").value;
+    var qty = parseFloat(table.rows[i].querySelector(".qty").value);
+    var price = parseFloat(table.rows[i].querySelector(".price").value);
+
+    if(item && qty && price) {
+      var subtotal = qty * price;
+      totalAmount += subtotal;
+      items.push({item, qty, price, subtotal});
+    }
+  }
+
+  if(items.length === 0) {
+    document.getElementById("invoice").innerHTML = "Please add at least one valid item.";
+    return;
+  }
+
+  var html = `<h3>Invoice</h3>
+              <p><strong>Company:</strong> ${company}</p>
+              <p><strong>Client:</strong> ${client}</p>
+              <table>
+                <tr>
+                  <th>Item</th>
+                  <th>Quantity</th>
+                  <th>Price (₹)</th>
+                  <th>Subtotal (₹)</th>
+                </tr>`;
+
+  items.forEach(function(it) {
+    html += `<tr>
+               <td>${it.item}</td>
+               <td>${it.qty}</td>
+               <td>${it.price.toFixed(2)}</td>
+               <td>${it.subtotal.toFixed(2)}</td>
+             </tr>`;
+  });
+
+  html += `<tr>
+             <td colspan="3"><strong>Total</strong></td>
+             <td><strong>${totalAmount.toFixed(2)}</strong></td>
+           </tr>
+           </table>`;
+
+  document.getElementById("invoice").innerHTML = html;
+}
+
+function downloadInvoice() {
+  var invoiceText = document.getElementById("invoice").innerText;
+  if(!invoiceText) {
+    alert("Please generate the invoice first.");
+    return;
+  }
+  var blob = new Blob([invoiceText], { type: "text/plain" });
+  var link = document.createElement("a");
+  link.href = window.URL.createObjectURL(blob);
+  link.download = "invoice.txt";
+  link.click();
+}
+</script>
+</body>
+</html>
