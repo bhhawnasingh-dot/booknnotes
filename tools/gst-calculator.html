@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Free GST Calculator Online | BookNNotes</title>
+  <meta name="description" content="Calculate GST instantly. Free online GST calculator for inclusive and exclusive GST calculations.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      background: #fff;
+      padding: 20px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    button {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .result {
+      background: #eef;
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>GST Calculator</h1>
+
+  <p>Use this free GST calculator to calculate Goods and Services Tax easily. Enter the amount, select GST rate, and get instant results.</p>
+
+  <input type="number" id="amount" placeholder="Enter amount" />
+
+  <select id="rate">
+    <option value="5">5% GST</option>
+    <option value="12">12% GST</option>
+    <option value="18" selected>18% GST</option>
+    <option value="28">28% GST</option>
+  </select>
+
+  <button onclick="calculateGST()">Calculate GST</button>
+
+  <div class="result" id="result"></div>
+
+  <h2>How this GST Calculator works</h2>
+  <p>Enter the original amount, choose the GST rate, and click calculate. The tool will instantly show GST amount and total price.</p>
+
+  <h2>Who should use this tool?</h2>
+  <p>This calculator is useful for students, shopkeepers, freelancers, and small business owners.</p>
+</div>
+
+<script>
+function calculateGST() {
+  var amount = parseFloat(document.getElementById("amount").value);
+  var rate = parseFloat(document.getElementById("rate").value);
+
+  if (isNaN(amount) || amount <= 0) {
+    document.getElementById("result").innerHTML = "Please enter a valid amount.";
+    return;
+  }
+
+  var gst = (amount * rate) / 100;
+  var total = amount + gst;
+
+  document.getElementById("result").innerHTML =
+    "GST Amount: ₹" + gst.toFixed(2) + "<br>" +
+    "Total Amount (Including GST): ₹" + total.toFixed(2);
+}
+</script>
+
+</body>
+</html>
