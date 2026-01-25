@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Social Media PNG Template Generator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- html2canvas library -->
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+<style>
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  font-family:Arial, sans-serif;
+  background:#f4f6f8;
+}
+
+.wrapper{
+  width:100%;
+  max-width:1200px;
+  padding:20px;
+}
+
+h1{
+  text-align:center;
+  color:#4f46e5;
+}
+
+.controls{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+  margin:30px 0;
+}
+
+label{
+  font-size:14px;
+  color:#333;
+}
+
+input, select{
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+/* PREVIEW 9:16 */
+.preview-wrapper{
+  display:flex;
+  justify-content:center;
+}
+
+.preview-box{
+  width:360px;
+  height:640px;
+  border-radius:20px;
+  padding:30px;
+  text-align:center;
+  color:white;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  box-shadow:0 12px 30px rgba(0,0,0,0.2);
+}
+
+.preview-box h2{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.preview-box p{
+  font-size:18px;
+}
+
+.platform{
+  margin-top:20px;
+  font-size:14px;
+  opacity:0.9;
+}
+
+.btns{
+  text-align:center;
+  margin-top:25px;
+}
+
+button{
+  padding:12px 22px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  margin:5px;
+  font-size:15px;
+}
+
+.download{
+  background:#4f46e5;
+  color:white;
+}
+
+.reset{
+  background:#ddd;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<h1>🎬 Social Media PNG Template Generator</h1>
+
+<div class="controls">
+
+  <div>
+    <label>Brand / Page Name</label>
+    <input type="text" id="brand" placeholder="Your Brand Name">
+  </div>
+
+  <div>
+    <label>Hook / Caption Line</label>
+    <input type="text" id="tagline" placeholder="Catchy one-liner">
+  </div>
+
+  <div>
+    <label>Platform</label>
+    <select id="platform">
+      <option>YouTube Shorts</option>
+      <option>Instagram Reels</option>
+      <option>Facebook Reels</option>
+    </select>
+  </div>
+
+  <div>
+    <label>Primary Color</label>
+    <input type="color" id="color1" value="#4f46e5">
+  </div>
+
+  <div>
+    <label>Secondary Color</label>
+    <input type="color" id="color2" value="#22c55e">
+  </div>
+
+  <div>
+    <label>Font</label>
+    <select id="font">
+      <option value="Arial">Arial</option>
+      <option value="Poppins">Poppins</option>
+      <option value="Verdana">Verdana</option>
+      <option value="Georgia">Georgia</option>
+    </select>
+  </div>
+
+</div>
+
+<div class="preview-wrapper">
+  <div class="preview-box" id="preview">
+    <h2 id="pBrand">Your Brand Name</h2>
+    <p id="pTag">Your catchy line here</p>
+    <div class="platform" id="pPlatform">YouTube Shorts</div>
+  </div>
+</div>
+
+<div class="btns">
+  <button class="download" onclick="downloadPNG()">Download PNG (1080×1920)</button>
+  <button class="reset" onclick="location.reload()">Reset</button>
+</div>
+
+</div>
+
+<script>
+function update(){
+  document.getElementById("pBrand").innerText =
+    document.getElementById("brand").value || "Your Brand Name";
+
+  document.getElementById("pTag").innerText =
+    document.getElementById("tagline").value || "Your catchy line here";
+
+  document.getElementById("pPlatform").innerText =
+    document.getElementById("platform").value;
+
+  let c1=document.getElementById("color1").value;
+  let c2=document.getElementById("color2").value;
+  let font=document.getElementById("font").value;
+
+  let box=document.getElementById("preview");
+  box.style.background=`linear-gradient(135deg, ${c1}, ${c2})`;
+  box.style.fontFamily=font;
+}
+
+document.querySelectorAll("input,select")
+.forEach(el=>el.addEventListener("input",update));
+
+function downloadPNG(){
+  html2canvas(document.getElementById("preview"),{
+    scale:3
+  }).then(canvas=>{
+    let link=document.createElement("a");
+    link.download="social-media-template-1080x1920.png";
+    link.href=canvas.toDataURL("image/png");
+    link.click();
+  });
+}
+</script>
+
+</body>
+</html>
