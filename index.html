@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>BookNNotes – Free Online Tools (PDF, Calculators, Logo & More)</title>
+  <title>BookNNotes – Free Online Tools (PDF, Calculators, Drawing & More)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO META DESCRIPTION -->
-  <meta name="description" content="BookNNotes offers completely free online tools like PDF Merge & Split, PDF to Word, BMI Calculator, Age Calculator, EMI Calculator, GST Calculator, Invoice Generator, Currency Converter, QR Code Generator, Logo Generator & more. No registration required.">
+  <meta name="description" content="BookNNotes offers completely free online tools like Draw & Colour Online, Social Media PNG Generator, PDF Merge & Split, PDF to Word, BMI Calculator, Age Calculator, EMI Calculator, GST Calculator, Invoice Generator, Currency Converter, QR Code Generator, Logo Generator & more. No registration required.">
 
   <style>
     body{
@@ -54,14 +54,27 @@
       color:#555;
       line-height:1.4;
     }
-    .about{
+    .about, .disclaimer{
       max-width:900px;
       margin:60px auto 20px;
       background:#fff;
       padding:30px;
       border-radius:14px;
       box-shadow:0 8px 20px rgba(0,0,0,0.06);
+    }
+    .about{
       text-align:center;
+    }
+    .disclaimer h2{
+      color:#4f46e5;
+      margin-bottom:15px;
+      text-align:center;
+    }
+    .disclaimer p{
+      font-size:14px;
+      color:#555;
+      line-height:1.6;
+      margin-bottom:10px;
     }
     footer{
       text-align:center;
@@ -84,98 +97,61 @@
 
 <div class="tools">
 
-  <a class="tool" href="tools/bmi.html">
-    <h2>BMI Calculator</h2>
-    <p>Instantly calculate your Body Mass Index and understand your health category using height and weight.</p>
+  <a class="tool" href="tools/draw-and-colour-online/">
+    <h2>Draw & Colour Online</h2>
+    <p>Free online drawing and colouring tool for kids and beginners.</p>
   </a>
 
-  <a class="tool" href="tools/age.html">
-    <h2>Age Calculator</h2>
-    <p>Find your exact age in years, months, and days in seconds. Perfect for forms and records.</p>
+  <a class="tool" href="tools/social-media-png-generator/">
+    <h2>Social Media PNG Generator</h2>
+    <p>Create professional PNG designs for Reels & Shorts instantly.</p>
   </a>
 
-  <a class="tool" href="tools/loan-emi.html">
-    <h2>Loan EMI Calculator</h2>
-    <p>Calculate monthly EMI, interest amount, and total loan repayment easily.</p>
-  </a>
-
-  <a class="tool" href="tools/simple-interest.html">
-    <h2>Simple Interest Calculator</h2>
-    <p>Quickly calculate simple interest based on principal, rate, and time.</p>
-  </a>
-
-  <a class="tool" href="tools/currency.html">
-    <h2>Currency Converter</h2>
-    <p>Convert currencies instantly using a simple and easy online currency converter.</p>
-  </a>
-
-  <a class="tool" href="tools/qr.html">
-    <h2>QR Code Generator</h2>
-    <p>Create QR codes for links, text, or data instantly. Free and browser-based.</p>
-  </a>
-
-  <a class="tool" href="tools/image-resizer.html">
-    <h2>Image Resizer</h2>
-    <p>Resize images online without losing quality. Ideal for social media and websites.</p>
-  </a>
-
-  <a class="tool" href="tools/pdf-merge.html">
-    <h2>PDF Merge</h2>
-    <p>Merge multiple PDF files into one document securely. No server upload required.</p>
-  </a>
-
-  <a class="tool" href="tools/pdf-split.html">
-    <h2>PDF Split</h2>
-    <p>Split PDF pages easily and download only the pages you need.</p>
-  </a>
-
-  <a class="tool" href="tools/pdf-to-word.html">
-    <h2>PDF to Word</h2>
-    <p>Convert PDF files into editable Word documents quickly and easily.</p>
-  </a>
-
-  <a class="tool" href="tools/word-to-pdf.html">
-    <h2>Word to PDF</h2>
-    <p>Convert Word documents into clean and high-quality PDF files.</p>
-  </a>
-
-  <a class="tool" href="tools/todo.html">
-    <h2>To-Do List</h2>
-    <p>Organize daily tasks and boost productivity using a simple to-do planner.</p>
-  </a>
-
-  <a class="tool" href="tools/tax.html">
-    <h2>Tax Calculator</h2>
-    <p>Estimate tax quickly using a simple and easy-to-use tax calculator.</p>
-  </a>
-
-  <a class="tool" href="tools/logo-generator.html">
-    <h2>Logo Generator</h2>
-    <p>Create simple logos instantly for your brand or project. Free and easy to use.</p>
-  </a>
-
-  <!-- NEW TOOL: GST Calculator -->
-  <a class="tool" href="tools/gst-calculator.html">
-    <h2>GST Calculator</h2>
-    <p>Calculate GST for your products or services instantly. Fast, accurate, and free to use.</p>
-  </a>
-
-  <!-- NEW TOOL: Invoice Generator -->
-  <a class="tool" href="tools/invoice-generator.html">
-    <h2>Invoice Generator</h2>
-    <p>Create professional invoices quickly for your business or clients. Free and easy to download.</p>
-  </a>
+  <a class="tool" href="tools/bmi.html"><h2>BMI Calculator</h2><p>Calculate Body Mass Index instantly.</p></a>
+  <a class="tool" href="tools/age.html"><h2>Age Calculator</h2><p>Find exact age in seconds.</p></a>
+  <a class="tool" href="tools/loan-emi.html"><h2>Loan EMI Calculator</h2><p>Calculate EMI and interest easily.</p></a>
+  <a class="tool" href="tools/simple-interest.html"><h2>Simple Interest</h2><p>Quick interest calculation.</p></a>
+  <a class="tool" href="tools/currency.html"><h2>Currency Converter</h2><p>Instant currency conversion.</p></a>
+  <a class="tool" href="tools/qr.html"><h2>QR Generator</h2><p>Create QR codes instantly.</p></a>
+  <a class="tool" href="tools/image-resizer.html"><h2>Image Resizer</h2><p>Resize images online.</p></a>
+  <a class="tool" href="tools/pdf-merge.html"><h2>PDF Merge</h2><p>Merge PDFs easily.</p></a>
+  <a class="tool" href="tools/pdf-split.html"><h2>PDF Split</h2><p>Split PDF pages.</p></a>
+  <a class="tool" href="tools/pdf-to-word.html"><h2>PDF to Word</h2><p>Convert PDF to Word.</p></a>
+  <a class="tool" href="tools/word-to-pdf.html"><h2>Word to PDF</h2><p>Convert Word to PDF.</p></a>
+  <a class="tool" href="tools/todo.html"><h2>To-Do List</h2><p>Manage daily tasks.</p></a>
+  <a class="tool" href="tools/tax.html"><h2>Tax Calculator</h2><p>Estimate tax easily.</p></a>
+  <a class="tool" href="tools/logo-generator.html"><h2>Logo Generator</h2><p>Create simple logos.</p></a>
+  <a class="tool" href="tools/gst-calculator.html"><h2>GST Calculator</h2><p>Calculate GST instantly.</p></a>
+  <a class="tool" href="tools/invoice-generator.html"><h2>Invoice Generator</h2><p>Create invoices online.</p></a>
 
 </div>
 
-<!-- ABOUT -->
 <div class="about">
   <h2>About BookNNotes</h2>
   <p>
-    BookNNotes is an <strong>evolving platform</strong> that has grown from a free educational website
-    into a <strong>completely free online tools platform</strong>.
-    All tools are browser-based, fast, secure, and require <strong>no registration</strong>.
-    Our mission is to simplify daily tasks and make useful tools accessible to everyone.
+    BookNNotes is a growing <strong>free online tools platform</strong>.
+    All tools work directly in your browser with no registration.
+  </p>
+</div>
+
+<!-- DISCLAIMER SECTION -->
+<div class="disclaimer">
+  <h2>Disclaimer</h2>
+  <p>
+    All tools provided on BookNNotes are for <strong>general informational and utility purposes only</strong>.
+    The results generated by calculators, converters, generators, or creative tools may not be 100% accurate.
+  </p>
+  <p>
+    BookNNotes does not provide financial, medical, legal, tax, or professional advice.
+    Users are advised to verify results independently or consult a qualified professional when required.
+  </p>
+  <p>
+    Any drawings, designs, images, documents, or files created or downloaded using our tools are used
+    <strong>at the user’s own risk</strong>. BookNNotes shall not be held liable for any loss or damage arising
+    from the use of this website or its tools.
+  </p>
+  <p>
+    By using this website, you agree to this disclaimer and our related policies.
   </p>
 </div>
 
