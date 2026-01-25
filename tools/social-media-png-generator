@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Social Media PNG Template Generator</title>
+<title>Free Social Media PNG Template Generator | BookNNotes</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- html2canvas library -->
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
 <style>
@@ -14,29 +13,33 @@
 body{
   margin:0;
   min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
   font-family:Arial, sans-serif;
   background:#f4f6f8;
 }
 
 .wrapper{
-  width:100%;
   max-width:1200px;
+  margin:auto;
   padding:20px;
 }
 
 h1{
   text-align:center;
   color:#4f46e5;
+  margin-bottom:10px;
+}
+
+.subtitle{
+  text-align:center;
+  color:#555;
+  margin-bottom:30px;
 }
 
 .controls{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:15px;
-  margin:30px 0;
+  margin-bottom:30px;
 }
 
 label{
@@ -51,47 +54,51 @@ input, select{
   border:1px solid #ccc;
 }
 
-/* PREVIEW 9:16 */
+/* PREVIEW AREA */
 .preview-wrapper{
   display:flex;
   justify-content:center;
+  margin-bottom:25px;
 }
 
 .preview-box{
   width:360px;
   height:640px;
-  border-radius:20px;
+  border-radius:22px;
   padding:30px;
   text-align:center;
-  color:white;
+  color:#fff;
   display:flex;
   flex-direction:column;
   justify-content:center;
-  box-shadow:0 12px 30px rgba(0,0,0,0.2);
+  align-items:center;
+  background:linear-gradient(135deg,#4f46e5,#22c55e);
+  box-shadow:0 14px 35px rgba(0,0,0,0.25);
 }
 
 .preview-box h2{
-  font-size:28px;
-  margin-bottom:10px;
+  font-size:30px;
+  margin:0 0 10px;
 }
 
 .preview-box p{
   font-size:18px;
+  margin:0;
 }
 
 .platform{
-  margin-top:20px;
+  margin-top:22px;
   font-size:14px;
   opacity:0.9;
 }
 
+/* BUTTONS */
 .btns{
   text-align:center;
-  margin-top:25px;
 }
 
 button{
-  padding:12px 22px;
+  padding:12px 24px;
   border:none;
   border-radius:10px;
   cursor:pointer;
@@ -101,11 +108,11 @@ button{
 
 .download{
   background:#4f46e5;
-  color:white;
+  color:#fff;
 }
 
 .reset{
-  background:#ddd;
+  background:#e5e7eb;
 }
 </style>
 </head>
@@ -114,7 +121,8 @@ button{
 
 <div class="wrapper">
 
-<h1>🎬 Social Media PNG Template Generator</h1>
+<h1>🎨 Social Media PNG Template Generator</h1>
+<p class="subtitle">Create YouTube Shorts, Instagram & Facebook Reels Posters (1080×1920)</p>
 
 <div class="controls">
 
@@ -151,9 +159,9 @@ button{
     <label>Font</label>
     <select id="font">
       <option value="Arial">Arial</option>
-      <option value="Poppins">Poppins</option>
       <option value="Verdana">Verdana</option>
       <option value="Georgia">Georgia</option>
+      <option value="Trebuchet MS">Trebuchet MS</option>
     </select>
   </div>
 
@@ -168,7 +176,7 @@ button{
 </div>
 
 <div class="btns">
-  <button class="download" onclick="downloadPNG()">Download PNG (1080×1920)</button>
+  <button class="download" onclick="downloadPNG()">⬇ Download PNG (1080×1920)</button>
   <button class="reset" onclick="location.reload()">Reset</button>
 </div>
 
@@ -176,30 +184,24 @@ button{
 
 <script>
 function update(){
-  document.getElementById("pBrand").innerText =
-    document.getElementById("brand").value || "Your Brand Name";
+  pBrand.innerText = brand.value || "Your Brand Name";
+  pTag.innerText = tagline.value || "Your catchy line here";
+  pPlatform.innerText = platform.value;
 
-  document.getElementById("pTag").innerText =
-    document.getElementById("tagline").value || "Your catchy line here";
+  preview.style.background =
+    `linear-gradient(135deg, ${color1.value}, ${color2.value})`;
 
-  document.getElementById("pPlatform").innerText =
-    document.getElementById("platform").value;
-
-  let c1=document.getElementById("color1").value;
-  let c2=document.getElementById("color2").value;
-  let font=document.getElementById("font").value;
-
-  let box=document.getElementById("preview");
-  box.style.background=`linear-gradient(135deg, ${c1}, ${c2})`;
-  box.style.fontFamily=font;
+  preview.style.fontFamily = font.value;
 }
 
 document.querySelectorAll("input,select")
 .forEach(el=>el.addEventListener("input",update));
 
 function downloadPNG(){
-  html2canvas(document.getElementById("preview"),{
-    scale:3
+  html2canvas(preview,{
+    scale:3,
+    width:360,
+    height:640
   }).then(canvas=>{
     let link=document.createElement("a");
     link.download="social-media-template-1080x1920.png";
