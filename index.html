@@ -1,241 +1,497 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>BookNNotes – Free Online Tools (PDF, Calculators, Drawing & More)</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="BookNNotes offers completely free online tools like Draw & Colour Online, Social Media PNG Generator, PDF Merge & Split, PDF to Word, BMI Calculator, Age Calculator, EMI Calculator, GST Calculator, Invoice Generator, Currency Converter, QR Code Generator, Logo Generator & more. No registration required.">
+<!-- PART 0 : What is BookNNotes + Top FAQ -->
+<section class="homepage-faq">
 
-  <style>
-    body{
-      font-family: Arial, sans-serif;
-      background:#f4f6f8;
-      margin:0;
-      padding:20px;
-    }
-    h1{
-      text-align:center;
-      color:#4f46e5;
-      margin-bottom:10px;
-    }
-    .subtitle{
-      text-align:center;
-      color:#555;
-      margin-bottom:20px;
-    }
-    .tools{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:20px;
-      max-width:1100px;
-      margin:auto;
-    }
-    .tool{
-      background:#fff;
-      padding:20px;
-      border-radius:14px;
-      text-decoration:none;
-      color:#333;
-      box-shadow:0 8px 20px rgba(0,0,0,0.08);
-      transition:0.2s;
-    }
-    .tool:hover{
-      transform:translateY(-4px);
-    }
-    .tool h2{
-      color:#4f46e5;
-      margin-bottom:8px;
-      font-size:18px;
-    }
-    .tool p{
-      font-size:14px;
-      color:#555;
-      line-height:1.4;
-    }
-    .about{
-      max-width:900px;
-      margin:40px auto 20px;
-      background:#fff;
-      padding:30px;
-      border-radius:14px;
-      box-shadow:0 8px 20px rgba(0,0,0,0.06);
-      text-align:center;
-    }
-    .disclaimer{
-      max-width:900px;
-      margin:20px auto;
-      background:#fff;
-      padding:20px;
-      border-radius:14px;
-      box-shadow:0 8px 20px rgba(0,0,0,0.06);
-      font-size:13px;
-      color:#555;
-      line-height:1.5;
-    }
-    footer{
-      text-align:center;
-      margin-top:40px;
-      font-size:14px;
-      color:#666;
-    }
-    footer a{
-      color:#4f46e5;
-      text-decoration:none;
-      margin:0 6px;
-    }
-  </style>
-</head>
-
-<body>
-
-<h1>📚 BookNNotes – Free Online Tools</h1>
-<p class="subtitle">Fast • Secure • No Registration • 100% Free</p>
-
-<!-- Top Google AdSense Code -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4518539647604461"
-     crossorigin="anonymous"></script>
-<!-- Home-Top-Square -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4518539647604461"
-     data-ad-slot="1212152383"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div class="tools">
-
-  <a class="tool" href="tools/draw-and-colour-online.html">
-    <h2>Draw & Colour Online</h2>
-    <p>Free online drawing and colouring tool for kids and beginners. Draw, erase, choose colors, and download your artwork instantly.</p>
-  </a>
-
-  <a class="tool" href="tools/social-media-png-generator.html">
-    <h2>Social Media PNG Generator</h2>
-    <p>Create professional PNG designs for Instagram Reels, YouTube Shorts, and Facebook. Customize text, colors, fonts, and download high-quality images.</p>
-  </a>
-
-  <a class="tool" href="tools/bmi.html">
-    <h2>BMI Calculator</h2>
-    <p>Instantly calculate your Body Mass Index and understand your health category.</p>
-  </a>
-
-  <a class="tool" href="tools/age.html">
-    <h2>Age Calculator</h2>
-    <p>Find your exact age in years, months, and days in seconds.</p>
-  </a>
-
-  <a class="tool" href="tools/loan-emi.html">
-    <h2>Loan EMI Calculator</h2>
-    <p>Calculate monthly EMI, interest amount, and total loan repayment easily.</p>
-  </a>
-
-  <a class="tool" href="tools/simple-interest.html">
-    <h2>Simple Interest Calculator</h2>
-    <p>Quickly calculate simple interest based on principal, rate, and time.</p>
-  </a>
-
-  <a class="tool" href="tools/currency.html">
-    <h2>Currency Converter</h2>
-    <p>Convert currencies instantly using a simple and easy online currency converter.</p>
-  </a>
-
-  <a class="tool" href="tools/qr.html">
-    <h2>QR Code Generator</h2>
-    <p>Create QR codes for links, text, or data instantly.</p>
-  </a>
-
-  <a class="tool" href="tools/image-resizer.html">
-    <h2>Image Resizer</h2>
-    <p>Resize images online without losing quality. Ideal for social media and websites.</p>
-  </a>
-
-  <a class="tool" href="tools/pdf-merge.html">
-    <h2>PDF Merge</h2>
-    <p>Merge multiple PDF files into one document securely.</p>
-  </a>
-
-  <a class="tool" href="tools/pdf-split.html">
-    <h2>PDF Split</h2>
-    <p>Split PDF pages easily and download only what you need.</p>
-  </a>
-
-  <a class="tool" href="tools/pdf-to-word.html">
-    <h2>PDF to Word</h2>
-    <p>Convert PDF files into editable Word documents.</p>
-  </a>
-
-  <a class="tool" href="tools/word-to-pdf.html">
-    <h2>Word to PDF</h2>
-    <p>Convert Word documents into high-quality PDF files.</p>
-  </a>
-
-  <a class="tool" href="tools/todo.html">
-    <h2>To-Do List</h2>
-    <p>Organize daily tasks and boost productivity.</p>
-  </a>
-
-  <a class="tool" href="tools/tax.html">
-    <h2>Tax Calculator</h2>
-    <p>Estimate tax quickly using a simple calculator.</p>
-  </a>
-
-  <a class="tool" href="tools/logo-generator.html">
-    <h2>Logo Generator</h2>
-    <p>Create simple logos instantly for your brand or project.</p>
-  </a>
-
-  <a class="tool" href="tools/gst-calculator.html">
-    <h2>GST Calculator</h2>
-    <p>Calculate GST for products or services instantly.</p>
-  </a>
-
-  <a class="tool" href="tools/invoice-generator.html">
-    <h2>Invoice Generator</h2>
-    <p>Create professional invoices quickly and easily.</p>
-  </a>
-
-  <a class="tool" href="tools/digital-advertising-tools.html">
-    <h2>Digital Advertising Tools</h2>
-    <p>Explore online advertising options for social media campaigns. All features available for any advertiser.</p>
-  </a>
-
-</div>
-
-<!-- Bottom Google AdSense Code -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4518539647604461"
-     crossorigin="anonymous"></script>
-<!-- Home-Bottom-Square -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4518539647604461"
-     data-ad-slot="1212152383"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div class="about">
-  <h2>About BookNNotes</h2>
-  <p>BookNNotes is a growing <strong>free online tools platform</strong>. All tools work directly in your browser with no registration. Our mission is to make daily digital tasks simple, fast, and accessible to everyone.</p>
-</div>
-
-<div class="disclaimer">
-  <h3>Disclaimer</h3>
+  <h2>What is BookNNotes?</h2>
   <p>
-    All tools on BookNNotes are provided for general informational and educational purposes only. While we aim to keep the tools accurate and up-to-date, we make no warranties or guarantees regarding results. Users are responsible for how they use the tools. BookNNotes is not liable for any loss, damage, or legal issues arising from the use of these tools. By using our tools, you agree to these terms.
+    BookNNotes is a free online tools platform that helps users perform daily digital
+    tasks easily. It offers calculators, PDF tools, image tools, design generators,
+    and productivity utilities that work directly in the browser without registration.
   </p>
-</div>
+
+  <h3>Top 10 Frequently Asked Questions</h3>
+
+  <p><strong>1. What is BookNNotes used for?</strong><br>
+  BookNNotes is used for calculations, PDF tools, image editing,
+  invoice creation, and productivity tasks.</p>
+
+  <p><strong>2. Are BookNNotes tools free?</strong><br>
+  Yes, all tools are completely free with no hidden charges.</p>
+
+  <p><strong>3. Do I need to sign up?</strong><br>
+  No registration or login is required.</p>
+
+  <p><strong>4. Is BookNNotes safe?</strong><br>
+  Yes, tools are safe and privacy-focused.</p>
+
+  <p><strong>5. Does BookNNotes work on mobile?</strong><br>
+  Yes, it is fully mobile-friendly.</p>
+
+</section>
+
+<!-- ✅ AdSense Placement (AFTER PART 0 – BEST POSITION) -->
+<ins class="adsbygoogle"
+     style="display:block; margin:20px 0;"
+     data-ad-client="ca-pub-4518539647604461"
+     data-ad-slot="1212152383"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<section class="tool-content">
+
+  <h2>Draw & Colour Online</h2>
+  <p>
+    Draw & Colour Online is a free browser-based drawing tool designed for kids, students,
+    and beginners. It allows users to draw, colour, erase, and download artwork without
+    installing any software.
+  </p>
+
+  <h3>Frequently Asked Questions</h3>
+  <p><strong>What is Draw & Colour Online?</strong><br>
+  It is a simple online drawing and colouring tool that works directly in your browser.</p>
+
+  <p><strong>Who can use this tool?</strong><br>
+  Kids, students, teachers, parents, and creative beginners can easily use this tool.</p>
+
+  <p><strong>Is this tool free and safe?</strong><br>
+  Yes, it is completely free and does not require login or personal information.</p>
+
+  <p><strong>What are the limitations?</strong><br>
+  This tool is meant for basic drawing and not for professional graphic design.</p>
+
+  <p><strong>Use Tool:</strong>
+  <a href="https://booknnotes.com/tools/draw-and-colour-online.html">Draw & Colour Online</a>
+  </p>
+
+  <hr>
+
+  <h2>Social Media PNG Generator</h2>
+  <p>
+    Social Media PNG Generator helps users create simple and professional PNG images for
+    platforms like Instagram, Facebook, and YouTube.
+  </p>
+
+  <h3>Frequently Asked Questions</h3>
+  <p><strong>What is a Social Media PNG Generator?</strong><br>
+  It is a tool to design and download PNG images for social media posts and reels.</p>
+
+  <p><strong>Who should use this tool?</strong><br>
+  Content creators, students, small businesses, and social media users.</p>
+
+  <p><strong>Is registration required?</strong><br>
+  No, the tool works without any registration.</p>
+
+  <p><strong>What are the limitations?</strong><br>
+  It supports basic designs and does not replace advanced design software.</p>
+
+  <p><strong>Use Tool:</strong>
+  <a href="https://booknnotes.com/tools/social-media-png-generator.html">Social Media PNG Generator</a>
+  </p>
+
+  <hr>
+
+  <h2>BMI Calculator</h2>
+  <p>
+    BMI Calculator helps users estimate their Body Mass Index using height and weight.
+    It is useful for basic health awareness and educational purposes.
+  </p>
+
+  <h3>Frequently Asked Questions</h3>
+  <p><strong>What is a BMI Calculator?</strong><br>
+  It calculates Body Mass Index to understand general weight categories.</p>
+
+  <p><strong>Is BMI medically accurate?</strong><br>
+  BMI is only a general indicator and not a medical diagnosis.</p>
+
+  <p><strong>Who can use this tool?</strong><br>
+  Students, learners, and general users.</p>
+
+  <p><strong>What are the limitations?</strong><br>
+  It does not consider muscle mass, age, or gender.</p>
+
+  <p><strong>Use Tool:</strong>
+  <a href="https://booknnotes.com/tools/bmi.html">BMI Calculator</a>
+  </p>
+
+  <hr>
+
+  <h2>Age Calculator</h2>
+  <p>
+    Age Calculator calculates exact age in years, months, and days based on date of birth.
+    It is commonly used for forms, exams, and learning purposes.
+  </p>
+
+  <h3>Frequently Asked Questions</h3>
+  <p><strong>What is an Age Calculator?</strong><br>
+  A tool to calculate age instantly using date of birth.</p>
+
+  <p><strong>Is this tool accurate?</strong><br>
+  Yes, it provides accurate calendar-based calculations.</p>
+
+  <p><strong>Is it a legal proof of age?</strong><br>
+  No, it is for informational use only.</p>
+
+  <p><strong>Use Tool:</strong>
+  <a href="https://booknnotes.com/tools/age.html">Age Calculator</a>
+  </p>
+
+  <hr>
+
+  <h2>Loan EMI Calculator</h2>
+  <p>
+    Loan EMI Calculator helps users estimate monthly EMI based on loan amount,
+    interest rate, and tenure for financial planning.
+  </p>
+
+  <h3>Frequently Asked Questions</h3>
+  <p><strong>What is an EMI Calculator?</strong><br>
+  It calculates estimated monthly loan installments.</p>
+
+  <p><strong>Who should use this tool?</strong><br>
+  Borrowers, students, and finance learners.</p>
+
+  <p><strong>Is the EMI final?</strong><br>
+  No, actual EMI may vary by bank and loan terms.</p>
+
+  <p><strong>Use Tool:</strong>
+  <a href="https://booknnotes.com/tools/loan-emi.html">Loan EMI Calculator</a>
+  </p>
+
+  <hr>
+
+  <h2>Simple Interest Calculator</h2>
+  <p>
+    Simple Interest Calculator calculates interest based on principal, rate, and time.
+    It is helpful for students and beginners learning finance.
+  </p>
+
+  <h3>Frequently Asked Questions</h3>
+  <p><strong>What is Simple Interest?</strong><br>
+  Interest calculated only on the principal amount.</p>
+
+  <p><strong>Who can use this tool?</strong><br>
+  Students, teachers, and general users.</p>
+
+  <p><strong>What are the limitations?</strong><br>
+  It does not calculate compound interest.</p>
+
+  <p><strong>Use Tool:</strong>
+  <a href="https://booknnotes.com/tools/simple-interest.html">Simple Interest Calculator</a>
+  </p>
+
+</section>
+<section class="tool-content">
+
+  <h2>Currency Converter</h2>
+  <p>
+    Currency Converter is a free online tool that helps users convert one currency
+    into another quickly. It is useful for students, travelers, and learners who
+    want an approximate conversion value.
+  </p>
+
+  <h3>Frequently Asked Questions</h3>
+  <p><strong>What is a Currency Converter?</strong><br>
+  It converts the value of one currency into another based on exchange rates.</p>
+
+  <p><strong>Who can use this tool?</strong><br>
+  Students, travelers, online sellers, and general users.</p>
+
+  <p><strong>Is the conversion rate final?</strong><br>
+  No, rates are indicative and may differ from bank or market rates.</p>
+
+  <p><strong>Use Tool:</strong>
+  <a href="https://booknnotes.com/tools/currency.html">Currency Converter</a>
+  </p>
+
+  <hr>
+
+  <h2>QR Code Generator</h2>
+  <p>
+    QR Code Generator allows users to create QR codes for links, text, or basic data.
+    It is helpful for digital sharing, marketing, and educational purposes.
+  </p>
+
+  <h3>Frequently Asked Questions</h3>
+  <p><strong>What is a QR Code Generator?</strong><br>
+  It is a tool that converts text or links into scannable QR codes.</p>
+
+  <p><strong>Is registration required?</strong><br>
+  No, this tool works without any signup.</p>
+
+  <p><strong>Where can QR codes be used?</strong><br>
+  Websites, posters, visiting cards, and digital content.</p>
+
+  <p><strong>Use Tool:</strong>
+  <a href="https://booknnotes.com/tools/qr.html">QR Code Generator</a>
+  </p>
+
+  <hr>
+
+  <h2>Image Resizer</h2>
+  <p>
+    Image Resizer helps users resize images online without losing quality.
+    It is useful for social media, websites, and document uploads.
+  </p>
+
+  <h3>Frequently Asked Questions</h3>
+  <p><strong>What is an Image Resizer?</strong><br>
+  A tool to change image dimensions easily online.</p>
+
+  <p><strong>Does it reduce image quality?</strong><br>
+  The tool is designed to maintain image quality as much as possible.</p>
+
+  <p><strong>Who should use this tool?</strong><br>
+  Students, bloggers, designers, and general users.</p>
+
+  <p><strong>Use Tool:</strong>
+  <a href="https://booknnotes.com/tools/image-resizer.html">Image Resizer</a>
+  </p>
+
+  <hr>
+
+  <h2>PDF Merge</h2>
+  <p>
+    PDF Merge allows users to combine multiple PDF files into a single document.
+    It is useful for office work, study materials, and document management.
+  </p>
+
+  <h3>Frequently Asked Questions</h3>
+  <p><strong>What is PDF Merge?</strong><br>
+  A tool to combine multiple PDF files into one.</p>
+
+  <p><strong>Is it safe to use?</strong><br>
+  Yes, files are processed securely and not stored permanently.</p>
+
+  <p><strong>Who can use this tool?</strong><br>
+  Students, professionals, and office users.</p>
+
+  <p><strong>Use Tool:</strong>
+  <a href="https://booknnotes.com/tools/pdf-merge.html">PDF Merge</a>
+  </p>
+
+  <hr>
+
+  <h2>PDF Split</h2>
+  <p>
+    PDF Split helps users extract or separate pages from a PDF file.
+    It saves time and avoids manual document editing.
+  </p>
+
+  <h3>Frequently Asked Questions</h3>
+  <p><strong>What is PDF Split?</strong><br>
+  A tool to divide a PDF file into separate pages or sections.</p>
+
+  <p><strong>Is this tool free?</strong><br>
+  Yes, it is completely free to use.</p>
+
+  <p><strong>What are its limitations?</strong><br>
+  It is suitable for basic splitting tasks only.</p>
+
+  <p><strong>Use Tool:</strong>
+  <a href="https://booknnotes.com/tools/pdf-split.html">PDF Split</a>
+  </p>
+
+  <hr>
+
+  <h2>PDF to Word</h2>
+  <p>
+    PDF to Word converter allows users to convert PDF files into editable Word documents.
+    It is useful for editing, assignments, and office work.
+  </p>
+
+  <h3>Frequently Asked Questions</h3>
+  <p><strong>What is PDF to Word?</strong><br>
+  A tool that converts PDF documents into Word format.</p>
+
+  <p><strong>Will formatting remain same?</strong><br>
+  Basic formatting is preserved, but minor changes may occur.</p>
+
+  <p><strong>Who should use this tool?</strong><br>
+  Students, teachers, and office professionals.</p>
+
+  <p><strong>Use Tool:</strong>
+  <a href="https://booknnotes.com/tools/pdf-to-word.html">PDF to Word Converter</a>
+  </p>
+
+</section>
+<section class="tool-content">
+
+  <h2>Word to PDF</h2>
+  <p>
+    Word to PDF tool allows users to convert Word documents into PDF format easily.
+    It is useful for sharing documents while keeping formatting intact.
+  </p>
+
+  <h3>Frequently Asked Questions</h3>
+  <p><strong>What is Word to PDF?</strong><br>
+  A tool that converts Word files into PDF documents.</p>
+
+  <p><strong>Who should use this tool?</strong><br>
+  Students, teachers, and office professionals.</p>
+
+  <p><strong>Is it free?</strong><br>
+  Yes, it is completely free and online.</p>
+
+  <p><strong>Use Tool:</strong>
+  <a href="https://booknnotes.com/tools/word-to-pdf.html">Word to PDF Converter</a>
+  </p>
+
+  <hr>
+
+  <h2>To-Do List</h2>
+  <p>
+    To-Do List tool helps users organize daily tasks and improve productivity.
+    It is suitable for students, professionals, and planners.
+  </p>
+
+  <h3>Frequently Asked Questions</h3>
+  <p><strong>What is a To-Do List?</strong><br>
+  A tool to list and manage daily tasks.</p>
+
+  <p><strong>Does it save data?</strong><br>
+  Tasks may be stored locally in your browser.</p>
+
+  <p><strong>Who can use it?</strong><br>
+  Anyone who wants better task management.</p>
+
+  <p><strong>Use Tool:</strong>
+  <a href="https://booknnotes.com/tools/todo.html">To-Do List</a>
+  </p>
+
+  <hr>
+
+  <h2>Tax Calculator</h2>
+  <p>
+    Tax Calculator helps users estimate tax amounts quickly for learning and planning.
+    It is designed for educational and informational purposes only.
+  </p>
+
+  <h3>Frequently Asked Questions</h3>
+  <p><strong>What is a Tax Calculator?</strong><br>
+  A tool to estimate tax based on entered values.</p>
+
+  <p><strong>Is this calculation final?</strong><br>
+  No, actual tax may vary as per laws and rules.</p>
+
+  <p><strong>Who should use this?</strong><br>
+  Students, learners, and small business owners.</p>
+
+  <p><strong>Use Tool:</strong>
+  <a href="https://booknnotes.com/tools/tax.html">Tax Calculator</a>
+  </p>
+
+  <hr>
+
+  <h2>Logo Generator</h2>
+  <p>
+    Logo Generator helps users create simple logos instantly for projects,
+    startups, and personal branding.
+  </p>
+
+  <h3>Frequently Asked Questions</h3>
+  <p><strong>What is a Logo Generator?</strong><br>
+  A tool to create basic logos online.</p>
+
+  <p><strong>Is it suitable for professional branding?</strong><br>
+  It is best for basic and temporary logo needs.</p>
+
+  <p><strong>Who can use it?</strong><br>
+  Students, startups, and beginners.</p>
+
+  <p><strong>Use Tool:</strong>
+  <a href="https://booknnotes.com/tools/logo-generator.html">Logo Generator</a>
+  </p>
+
+  <hr>
+
+  <h2>GST Calculator</h2>
+  <p>
+    GST Calculator helps users calculate Goods and Services Tax for products
+    and services. It is useful for students and small businesses.
+  </p>
+
+  <h3>Frequently Asked Questions</h3>
+  <p><strong>What is a GST Calculator?</strong><br>
+  A tool to calculate GST amount quickly.</p>
+
+  <p><strong>Is this calculation legally valid?</strong><br>
+  No, it is for informational purposes only.</p>
+
+  <p><strong>Who should use this tool?</strong><br>
+  Students, learners, and business owners.</p>
+
+  <p><strong>Use Tool:</strong>
+  <a href="https://booknnotes.com/tools/gst-calculator.html">GST Calculator</a>
+  </p>
+
+  <hr>
+
+  <h2>Invoice Generator</h2>
+  <p>
+    Invoice Generator allows users to create professional invoices quickly.
+    It is ideal for freelancers, students, and small businesses.
+  </p>
+
+  <h3>Frequently Asked Questions</h3>
+  <p><strong>What is an Invoice Generator?</strong><br>
+  A tool to create invoices online.</p>
+
+  <p><strong>Is registration required?</strong><br>
+  No, invoices can be created without signup.</p>
+
+  <p><strong>Is this invoice legally valid?</strong><br>
+  It is for basic use; legal validity depends on usage and compliance.</p>
+
+  <p><strong>Use Tool:</strong>
+  <a href="https://booknnotes.com/tools/invoice-generator.html">Invoice Generator</a>
+  </p>
+
+  <hr>
+
+  <h2>Digital Advertising Tools</h2>
+  <p>
+    Digital Advertising Tools provide basic utilities and guidance for online
+    advertising and promotion activities.
+  </p>
+
+  <h3>Frequently Asked Questions</h3>
+  <p><strong>What are Digital Advertising Tools?</strong><br>
+  Tools related to online ads and promotions.</p>
+
+  <p><strong>Who can use these tools?</strong><br>
+  Advertisers, learners, and small businesses.</p>
+
+  <p><strong>Are these tools paid?</strong><br>
+  No, they are available for free.</p>
+
+  <p><strong>Use Tool:</strong>
+  <a href="https://booknnotes.com/tools/digital-advertising-tools.html">
+    Digital Advertising Tools
+  </a>
+  </p>
+
+</section>
 
 <footer>
-  © 2026 BookNNotes.com |
-  <a href="privacy.html">Privacy</a> |
-  <a href="terms.html">Terms</a> |
-  <a href="contact.html">Contact</a>
-</footer>
+  <hr>
+  <p><strong>About BookNNotes</strong></p>
+  <p>
+    BookNNotes provides free online tools for students, professionals,
+    and learners. All tools work directly in the browser with no registration.
+  </p>
 
-</body>
-</html>
+  <p><strong>Disclaimer</strong></p>
+  <p>
+    All tools on BookNNotes are provided for informational and educational purposes only.
+    Results generated by calculators and tools are approximate and should not be considered
+    legal, medical, or financial advice. Users are responsible for how they use the tools.
+  </p>
+
+  <p>
+    © 2026 BookNNotes.com |
+    <a href="/privacy.html">Privacy Policy</a> |
+    <a href="/terms.html">Terms & Conditions</a> |
+    <a href="/contact.html">Contact</a>
+  </p>
+</footer>
