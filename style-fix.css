@@ -1,0 +1,31 @@
+/* Body basic spacing */
+body {
+    margin: 0;
+    padding: 0 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Headings spacing */
+h1, h2, h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Paragraph spacing */
+p {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Tools section spacing */
+.tools a.tool {
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* AdSense spacing */
+ins.adsbygoogle {
+    margin: 0 auto;
+    display: block;
+}
